@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+int main(void)
+{
+    string num;
+    int i;
+    char resp;
+
+    do{
+        cout << "Digite o numero desejado: ";
+        cin >> num;
+
+        cout << endl;
+
+        cout << "Numero invertido: ";
+
+        for(i = num.size() - 1; i >= 0; i--)
+        {
+            cout << num[i];
+        }
+
+        cout << endl << endl;
+
+        cout << "Gostaria de tentar novamente?" << endl;
+        cout << "Digite [S] p/ sim ou qualquer outra letra p/ nao: ";
+        cin >> resp;
+
+        cout << endl;
+
+    }while(resp == 'S' || resp == 's');
+
+    return 0;
+}
