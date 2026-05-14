@@ -5,12 +5,20 @@ using namespace std;
 const int LIN = 3;
 const int COL = 3;
 
-// Função para validar valor único
-bool valorExiste(int matriz[LIN][COL], int valor, int linhas, int colunas)
+// Verifica se o valor já existe
+bool valorExiste(int matriz[LIN][COL], int valor, int linhaAtual, int colunaAtual)
 {
-    for(int i = 0; i < linhas; i++)
+    for(int i = 0; i <= linhaAtual; i++)
     {
-        for(int j = 0; j < colunas; j++)
+        int limiteColuna;
+
+        // Na linha atual verifica somente até a coluna atual
+        if(i == linhaAtual)
+            limiteColuna = colunaAtual;
+        else
+            limiteColuna = COL;
+
+        for(int j = 0; j < limiteColuna; j++)
         {
             if(matriz[i][j] == valor)
             {
@@ -35,23 +43,23 @@ int main()
         {
             do
             {
-                cout << "Digite um valor para [" 
+                cout << "Digite um valor para ["
                      << i << "][" << j << "]: ";
 
                 cin >> valor;
 
-                if(valorExiste(matriz, valor, LIN, COL))
+                if(valorExiste(matriz, valor, i, j))
                 {
                     cout << "Valor repetido! Digite outro.\n";
                 }
 
-            } while(valorExiste(matriz, valor, LIN, COL));
+            } while(valorExiste(matriz, valor, i, j));
 
             matriz[i][j] = valor;
         }
     }
 
-    // Exibir matriz
+    // Mostrar matriz
     cout << "\nMatriz final:\n\n";
 
     for(int i = 0; i < LIN; i++)
