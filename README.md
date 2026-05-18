@@ -47,7 +47,7 @@ O material também apresenta exemplos de boas e más práticas de programação,
 
 ---
 
-# 🛠️ Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 * Linguagem: **C++**
 * Compilador: **g++ / MinGW**
