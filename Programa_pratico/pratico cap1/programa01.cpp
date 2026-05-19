@@ -3,85 +3,80 @@
 #include <string>
 #include <limits>
 
-/*
-  O programa deve ler: Nome do funcionario, Salario Base, Quantidade de horas extras.
-  Calcular o das horas extras, equivalente a 25. Calcular o salario bruto e o desconto do inss.
-*/ 
-
-
-
 using std::cout;
 using std::endl;
 using std::cin;
 
-cout << std::setprecision(2) << std::fixed << std::right;
-
-void saida(
+void saida(float salarioBase, float valorHorasEx,
+           float salarioBruto, float desconto, float salarioLiquido)
+{
+    cout << std::fixed << std::setprecision(2);
+    cout << "\n--- RESUMO SALARIAL ---\n";
+    cout << "Salario Base: R$ " << salarioBase << endl;
+    cout << "Horas Extras: R$ " << valorHorasEx << endl;
+    cout << "Salario Bruto: R$ " << salarioBruto << endl;
+    cout << "Desconto INSS: R$ " << desconto << endl;
+    cout << "Salario Liquido: R$ " << salarioLiquido << endl;
+    cout << "-----------------------\n\n";
+}
 
 void Funcionario()
 {
-  std::string NomeFuncionario;
-  cout << "Informe o nome do funcionario: ";
-  getilne(cin, NomeFuncionario);
+    std::string NomeFuncionario;
+    cout << "Informe o nome do funcionario: ";
+    getline(cin, NomeFuncionario);
 }
 
 float descontoInss(float SalarioBruto)
 {
-  float DescontoInss;
-
-  if(SalarioBruto <=  1320.00)
-    return DescontoInss = ((SalarioBruto * 8) / 100);
-  if(SalarioBruto >= 1320.01 and SalarioBruto <= 2571.29)
-    return DescontInss = ((Salario * 9) / 100);
-  if(SalarioBruto >= 2571.30)
-    return DescontoInss = ((Salario * 11) / 100);
-  
+    if (SalarioBruto <= 1320.00)
+        return SalarioBruto * 0.08;
+    else if (SalarioBruto <= 2571.29)
+        return SalarioBruto * 0.09;
+    else
+        return SalarioBruto * 0.11;
 }
 
-float calculoSalarial(float SalarioBase, float QuantHrsEx)
+void calculoSalarial(float SalarioBase, float QuantHrsEx)
 {
-  float ValorHrsEx, SalarioBruto, SalarioLiquid, desconto;
+    float ValorHrsEx = QuantHrsEx * 25;
+    float SalarioBruto = SalarioBase + ValorHrsEx;
+    float desconto = descontoInss(SalarioBruto);
+    float SalarioLiquido = SalarioBruto - desconto;
 
-  ValorHrsEx = QuantHrs * 25;
-  SalarioBruto = SalarioBase + ValorHrsEx;
-  desconto = descontoInss(SalarioBruto
-  SalarioLiquid = salarioBruto - desconto; 
-
-  saida(SalarioBase, ValorHrsEx, SalarioBruto);
-  
+    saida(SalarioBase, ValorHrsEx, SalarioBruto, desconto, SalarioLiquido);
 }
 
 void entradaSalario()
 {
-  float SalarioBase, QuantHrsEx;
-  cout << "Entre o valor do salario base do funcionario: "; cin >> SalarioBase;
-  cout << endl;
-  cout << "Entre a quantidade de horas extras trabalhadas: "; cin >> QuantHrsEx;
+    float SalarioBase, QuantHrsEx;
+    cout << "Entre o valor do salario base do funcionario: ";
+    cin >> SalarioBase;
 
-  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cout << "Entre a quantidade de horas extras trabalhadas: ";
+    cin >> QuantHrsEx;
 
-  calculoSalarial(SalarioBase, QuantHrsEx);
-  
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    calculoSalarial(SalarioBase, QuantHrsEx);
 }
 
-int main(void)
+int main()
 {
-  cout << "BEM-VINDO AO PROGRAMA01.CPP" << endl << endl;
+    cout << "BEM-VINDO AO PROGRAMA01.CPP\n\n";
 
-  while(true){
+    while (true)
+    {
+        Funcionario();
+        entradaSalario();
 
-    Funcionario();
-    entradaSalario();
+        char resp;
+        cout << "Gostaria de apresentar outro funcionario? ";
+        cout << "[S] sim / qualquer tecla para nao: ";
+        cin >> resp;
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    char resp;
-    cout << "Gostaria de apresentar outro funcionario? " << end;
-    cout << "Digite [S] p/ sim ou qualquer outra letra p/ nao...: "; cin >> resp;
-
-    if(resp != 'S' || resp != 's')
-      break; 
-  }
-  
-  
-  
-  
+        if (resp != 'S' && resp != 's')
+            break;
+    }
 }
