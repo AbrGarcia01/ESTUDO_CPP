@@ -1,0 +1,398 @@
+Perfeito. Nesse momento você deve fortalecer MUITO:
+
+* lógica;
+* decomposição em funções;
+* validação;
+* fluxo;
+* repetição;
+* tomada de decisão.
+
+Ainda sem se preocupar com:
+
+* classes;
+* ponteiros;
+* STL avançada;
+* arquitetura complexa.
+
+Vou te passar exercícios em ordem crescente de dificuldade, exatamente no nível ideal para evoluir bem.
+
+---
+
+# EXERCÍCIO 1 — Caixa eletrônico simples
+
+## Objetivo
+
+Treinar:
+
+* validação numérica;
+* `while`;
+* `if`;
+* funções.
+
+---
+
+# Regras
+
+O programa deve:
+
+1. Mostrar menu:
+
+```txt id="r3kn6v"
+1 - Depositar
+2 - Sacar
+3 - Ver saldo
+4 - Sair
+```
+
+---
+
+2. Começar com saldo:
+
+```txt id="wp2tzy"
+R$ 1000
+```
+
+---
+
+3. Validar:
+
+* depósitos negativos;
+* saque maior que saldo;
+* entradas inválidas.
+
+---
+
+# Funções obrigatórias
+
+Crie funções:
+
+* `menu()`
+* `depositar()`
+* `sacar()`
+* `mostrarSaldo()`
+* `lerNumero()`
+
+---
+
+# O que você vai praticar
+
+✅ loop infinito
+✅ validação
+✅ decisão
+✅ modularização
+✅ reutilização
+
+---
+
+# EXERCÍCIO 2 — Cadastro de notas
+
+## Objetivo
+
+Treinar:
+
+* funções;
+* médias;
+* validação;
+* repetição.
+
+---
+
+# Regras
+
+1. Pergunte nome do aluno.
+2. Pergunte 3 notas.
+3. Valide:
+
+   * nota entre 0 e 10.
+4. Calcule média.
+5. Exiba:
+
+   * aprovado;
+   * recuperação;
+   * reprovado.
+
+---
+
+# Critérios
+
+```txt id="6qq20t"
+>= 7 -> aprovado
+>= 5 -> recuperação
+< 5 -> reprovado
+```
+
+---
+
+# Desafio extra
+
+Permitir cadastrar vários alunos usando:
+
+```txt id="h9i6ek"
+Deseja cadastrar outro aluno?
+```
+
+---
+
+# Funções obrigatórias
+
+```txt id="4w7azr"
+lerNome()
+lerNota()
+calcularMedia()
+mostrarResultado()
+```
+
+---
+
+# EXERCÍCIO 3 — Folha salarial melhorada
+
+(Evolução do seu projeto)
+
+---
+
+# Objetivo
+
+Treinar:
+
+* organização;
+* subrotinas;
+* validação;
+* regras de negócio.
+
+---
+
+# Regras
+
+Cadastrar:
+
+* nome;
+* salário base;
+* horas extras;
+* dependentes.
+
+---
+
+# Novas regras
+
+## Hora extra
+
+```txt id="s08m1w"
+R$ 35 por hora
+```
+
+---
+
+## Bônus
+
+```txt id="9l0o8z"
+0 dependentes -> sem bônus
+1-2 -> +100
+3+ -> +300
+```
+
+---
+
+## Imposto
+
+```txt id="h0r3lw"
+Até 2500 -> 5%
+Até 5000 -> 10%
+Acima -> 15%
+```
+
+---
+
+# Mostrar relatório bonito
+
+Exemplo:
+
+```txt id="jlwmx7"
+=============================
+RELATORIO FUNCIONARIO
+=============================
+
+Nome: Maria
+
+Salario Base: 3000
+Horas Extras: 700
+Bonus: 300
+Bruto: 4000
+Imposto: 400
+
+Liquido: 3600
+```
+
+---
+
+# EXERCÍCIO 4 — Sistema de tabuada completo
+
+## Objetivo
+
+Treinar:
+
+* laços;
+* validação;
+* funções.
+
+---
+
+# Regras
+
+Usuário escolhe:
+
+* número;
+* início;
+* fim.
+
+---
+
+# Exemplo
+
+```txt id="70a6o8"
+Numero: 5
+Inicio: 1
+Fim: 10
+```
+
+---
+
+# Saída
+
+```txt id="dx8mcm"
+5 x 1 = 5
+5 x 2 = 10
+...
+```
+
+---
+
+# Desafio extra
+
+Menu:
+
+```txt id="6gud7m"
+1 - Tabuada normal
+2 - Tabuada inversa
+3 - Sair
+```
+
+---
+
+# EXERCÍCIO 5 — Mini sistema bancário
+
+Esse aqui já começa a te aproximar de pensamento senior.
+
+---
+
+# Regras
+
+Menu:
+
+```txt id="2h42bd"
+1 - Criar conta
+2 - Depositar
+3 - Sacar
+4 - Transferir
+5 - Ver saldo
+6 - Sair
+```
+
+---
+
+# Regras importantes
+
+* saldo nunca negativo;
+* validar tudo;
+* permitir múltiplas operações;
+* usar MUITAS funções.
+
+---
+
+# O que você vai desenvolver sem perceber
+
+✅ modelagem mental
+✅ separação de responsabilidade
+✅ controle de estado
+✅ lógica procedural
+✅ arquitetura básica
+
+---
+
+# Dica MUITO importante
+
+Quando fizer os exercícios:
+
+NÃO tente fazer tudo de uma vez.
+
+---
+
+# Fluxo correto
+
+## 1. Faça funcionar
+
+Mesmo feio.
+
+---
+
+## 2. Depois organize
+
+Extraia funções.
+
+---
+
+## 3. Depois melhore
+
+Validação.
+Mensagens.
+Layout.
+Nomes.
+
+---
+
+# Método profissional
+
+Senior trabalha assim:
+
+```txt id="59n58m"
+Primeiro:
+resolver o problema
+
+Depois:
+limpar o código
+
+Depois:
+melhorar arquitetura
+```
+
+---
+
+# Desafio que acelera MUITO evolução
+
+Depois de terminar qualquer exercício:
+tente responder:
+
+```txt id="x57foe"
+"O que neste código está repetido?"
+```
+
+Toda repetição:
+
+* normalmente vira função.
+
+---
+
+# Exercício ideal para você AGORA
+
+O MELHOR para seu momento é:
+
+✅ Exercício 1 (caixa eletrônico)
+
+Porque ele treina:
+
+* loop;
+* validação;
+* subrotina;
+* estado;
+* decisões.
+
+Que são os fundamentos mais importantes da programação procedural.
